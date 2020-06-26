@@ -4,6 +4,8 @@
 
 CWD=$(pwd)
 
+git submodule update --init --recursive
+
 ln -is $CWD/.applemusic $HOME
 ls -is $CWD/.battery.sh $HOME
 ln -is $CWD/.p10k.zsh $HOME
