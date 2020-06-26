@@ -2,7 +2,7 @@
 
 # This script will symlink dotfiles from the git repo directory to their appropriate locations in the user's home directory
 
-sets CWD variable to current directory
+# sets CWD variable to current directory
 CWD=$(pwd)
 
 # The next line is needed to automatically pull submodules included in the repo
