@@ -1,4 +1,4 @@
-!#/bin/zsh
+#!/bin/zsh
 
 # This script will symlink dotfiles from the git repo directory to their appropriate locations in the user's home directory
 
