@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# This is an AppleScript that will does the following:
+#     - Check to see if the Music App is running
+#     - If application is running, then check if playing
+#     - If playing, get track info (artist and song title)
+#     - Display information in TMUX status bar
+#     - If not playing, display "Nothing Playing"
+
+
+
+#     *** NOTE: THIS FUNCTIONALITY ONLY WORKS ON macOS ***
+
+NOW_PLAYING=$(osascript <<EOF
+
+set music_state to false
+
+if is_app_running("Music") then
+    tell application "Music" to set music_state to (player state as text)
+end if
+
+if music_state is equal to "playing" then
+    tell application "Music"
+    set track_name to name of current track
+    set artist_name to artist of current track
+    return track_name & " - #[bold]" & artist_name & "#[nobold]"
+    end tell
+else
+    return "Nothing playing :("
+end if
+
+on is_app_running(app_name)
+    tell application "System Events" to (name of processes) contains app_name
+end is_app_running
+EOF)
+
+echo $NOW_PLAYING
