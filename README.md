@@ -1,6 +1,3 @@
-
-# dotfiles
-=======
 # dotfiles configuration installer
 
 This repo houses dotfiles for my zsh UI. Running `install.sh` will check for previous instances of the associated files, back them up (.\<file\>.bak) and symlink the files from the repo to the appropriate location.
