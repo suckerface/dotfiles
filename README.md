@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # dotfiles
 =======
 # dotfiles configuration installer
@@ -27,4 +27,3 @@ This repo houses dotfiles for my zsh UI. Running `install.sh` will check for pre
 ![VIM UI](https://github.com/suckerface/dotfiles/blob/master/images/vim.png)
 
 ![TMUX UI](https://github.com/suckerface/dotfiles/blob/master/images/ui.png)
->>>>>>> a2b35ed3e27168ca57fa02545ea5d12c5bd816d2
