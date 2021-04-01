@@ -48,12 +48,13 @@ ln -is $CWD/.zshrc $HOME
 
 echo "If your prompt has unknown characters, run ${RED}'p10k configure'${NC} and answer ${RED}'Y'${NC} at the prompt to install the Meslo Nerd Font"
 
-ln -is $CWD/.oh-my-zsh $HOME/.oh-my-zsh
+ln -is $CWD/.oh-my-zsh $HOME
 
 # Copy/configure p10k
-ln -s $CWD/.oh-my-zsh/custom/themes/powerlevel10k $HOME/.oh-my-zsh/themes/
+ln -s $CWD/.oh-my-zsh/custom/themes/powerlevel10k $HOME/.oh-my-zsh/themes
 
 # Copy/configure vundle - has to be symlink for plugin install
+mkdir $HOME/.vim
 ln -s $CWD/bundle $HOME/.vim/
 
 # Install and configure Vundle options
