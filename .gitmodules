@@ -3,9 +3,21 @@
         url = https://github.com/ohmyzsh/ohmyzsh.git
 
 [submodule "powerlevel10k"]
-        path = .oh-my-zsh/custom/themes/powerlevel10k
+        path = powerlevel10k
         url = https://github.com/romkatv/powerlevel10k.git
 
 [submodule "bundle/Vundle.vim"]
 	path = bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
+        url = https://github.com/VundleVim/Vundle.vim.git
+
+[submodule "bundle/jellybeans.vim"]
+        path = bundle/jellybeans.vim
+        url = https://github.com/nanotech/jellybeans.vim.git
+
+[submodule "bundle/sparkup"]
+        path = bundle/sparkup
+        url = https://github.com/rstacruz/sparkup.git
+
+[submodule "bundle/vim-fugitive"]
+        path = bundle/vim-fugitive
+        url = https://github.com/tpope/vim-fugitive.git

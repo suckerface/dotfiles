@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 set number
-=======
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -95,4 +93,3 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 filetype plugin indent on
->>>>>>> a2b35ed3e27168ca57fa02545ea5d12c5bd816d2
