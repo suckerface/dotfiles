@@ -16,6 +16,8 @@ BATTERY=~/.battery.sh
 MUSIC=~/.applemusic
 OMZSH=~/.oh-my-zsh
 dirP10K=~/.oh-my-zsh/themes/powerlevel10k
+VPN=~/.vpn.sh
+LOCALIP=~/.localip.sh
 
 # Check for and install OMZSH if missing
 if test ! -d "$OMZSH"; then
@@ -59,6 +61,16 @@ if test -f "$MUSIC"; then
         mv ~/.applemusic ~/.applemusic.bak
 fi
 
+if test -f "$VPN"; then
+        echo "$VPN exists, creating backup"
+        mv ~/.vpn.sh ~/.vpn.sh.bak
+fi
+
+if test -f "$LOCALIP"; then
+        echo "$LOCALIP exists, creating backup"
+        mv ~/.localip.sh ~/.localip.sh.bak
+fi
+
 echo "Creating symlinks"
 
 # Symlinks files from repo to home directories
@@ -68,6 +80,8 @@ ln -is $CWD/.p10k.zsh $HOME
 ln -is $CWD/.tmux.conf $HOME
 ln -is $CWD/.vimrc $HOME
 ln -is $CWD/.zshrc $HOME
+ln -is $CWD/.vpn.sh $HOME
+ln -is $CWD/.localip.sh $HOME
 
 echo "Adding Powerlevel10k theme"
 if test ! -d "$dirP10K"; then
