@@ -13,7 +13,7 @@ This repo houses dotfiles for my zsh UI. Running `install.sh` will check for pre
     + Hostname
 
 ** Coming Soon **
-+ [ ] IP address in stat bar
++ [x] IP address in stat bar
 + [ ] Performance stats (CPU/Memory)
 + [ ] Configurable stock ticker
 + [ ] Weather
