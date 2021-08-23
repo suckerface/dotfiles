@@ -15,9 +15,10 @@ ZSH=~/.zshrc
 BATTERY=~/.battery.sh
 MUSIC=~/.applemusic
 OMZSH=~/.oh-my-zsh
-dirP10K=~/.oh-my-zsh/themes/powerlevel10k
+dirP10K=~/.oh-my-zsh/custom/themes/powerlevel10k
 VPN=~/.vpn.sh
 LOCALIP=~/.localip.sh
+FONT=/Library/Fonts
 
 # Check for and install OMZSH if missing
 if test ! -d "$OMZSH"; then
@@ -83,9 +84,24 @@ ln -is $CWD/.zshrc $HOME
 ln -is $CWD/.vpn.sh $HOME
 ln -is $CWD/.localip.sh $HOME
 
+echo "Adding Meslo Nerd Font"
+if test ! -f "$FONT"/"MesloLGS NF Regular.ttf"; then
+        ln -is "$CWD/fonts/MesloLGS NF Regular.ttf" $FONT
+fi
+if test ! -f "$FONT"/"MesloLGS NF Bold.ttf"; then
+        ln -is $CWD/fonts/"MesloLGS NF Bold.ttf" $FONT
+fi
+if test ! -f "$FONT"/"MesloLGS NF Italic.ttf"; then
+        ln -is $CWD/fonts/"MesloLGS NF Italic.ttf" $FONT
+fi
+if test ! -f $FONT/"MesloLGS NF Bold Italic.ttf"; then
+        ln -is $CWD/fonts/"MesloLGS NF Bold Italic.ttf" $FONT
+fi
+
 echo "Adding Powerlevel10k theme"
 if test ! -d "$dirP10K"; then
-        ln -is $CWD/.oh-my-zsh/custom/themes/powerlevel10k $HOME/.oh-my-zsh/themes
+        sh -c "$(git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k)"
+#        ln -is $CWD/.oh-my-zsh/custom/themes/powerlevel10k $HOME
 fi
 
 echo "Adding VIM plugins"
