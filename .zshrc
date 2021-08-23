@@ -7,7 +7,7 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/metasploit-framework/bin:/usr/local/Cellar
+# export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/metasploit-framework/bin:/usr/local/Cellar
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -115,3 +115,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Comment out the following line if a perl error appears at startup
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
+[[ :$PATH: == *:$HOME/bin:* ]] || PATH=$HOME/bin:$PATH
+
+# Get environment variables from .zsh_env_vars
+source ~/.zsh_env_vars
