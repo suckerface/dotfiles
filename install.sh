@@ -98,6 +98,12 @@ if test ! -f $FONT/"MesloLGS NF Bold Italic.ttf"; then
         ln -is $CWD/fonts/"MesloLGS NF Bold Italic.ttf" $FONT
 fi
 
+# Enable shell integration if using iTerm2
+if [[ $TERM_PROGRAM == "iTerm.app" ]]; then
+        echo "iTerm2 discovered, enabling shell integration\n"
+        sh -c "$(curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh)"
+fi
+
 echo "Adding Powerlevel10k theme"
 if test ! -d "$dirP10K"; then
         sh -c "$(git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k)"
@@ -116,6 +122,9 @@ vim ~/.vimrc +PluginInstall +x +q!
 
 # Apply theme
 source $HOME/.zshrc
+
+# Finish enabling shell integration for iTerm2
+source ~/.iterm2_shell_integration.zsh
 
 echo "If your prompt has unkown characters, run ${RED}'p10k configure'${NC} and answer ${RED}'Y'${NC} at the prompt to install the Meslo Nerd Font"
 

@@ -117,5 +117,12 @@ source $ZSH/oh-my-zsh.sh
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 [[ :$PATH: == *:$HOME/bin:* ]] || PATH=$HOME/bin:$PATH
 
-# Get environment variables from .zsh_env_vars
-source ~/.zsh_env_vars
+# Get environment variables from .zsh_env_vars if it exists
+if test -f "~/.zsh_env_vars"; then
+        source ~/.zsh_env_vars
+fi
+
+# Get aliases from .zsh_aliases if it exists
+if test -f "~/.zsh_aliases"; then
+        source ~/.zsh_aliases
+fi
